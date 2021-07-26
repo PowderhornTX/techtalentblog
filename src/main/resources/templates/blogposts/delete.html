@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Blog Site</title>
+    <th:block th:replace="/fragments/styling :: head-style"></th:block>
+</head>
+<body>
+	<div class="container">
+	  	<div th:replace="fragments/navbar :: navbar"></div>
+		<div class="row">
+		    <div class="col-md-12">
+		    	<h3>The post <span th:text="${blogPost.title}" /> has been deleted.</h3>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md">
+		        <a th:href="@{/}">
+		        	<button class="btn btn-primary">Return Home</button>
+		        </a>
+		        <a th:href="@{/blogposts/new}">
+		        	<button class="btn btn-secondary">Create Another Blog Post</button>
+		        </a>
+		    </div>
+		</div>
+	</div>
+
+    <script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+    <script th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>
+</body>
+</html>
